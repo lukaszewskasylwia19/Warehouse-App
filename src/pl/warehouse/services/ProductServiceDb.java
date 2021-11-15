@@ -33,7 +33,7 @@ public class ProductServiceDb extends SQLDatabaseConnection implements IProductS
                     "      ,[Price]\n" +
                     "      ,[Category]\n" +
                     "      ,[Details]\n" +
-                    "  FROM [Warehouse App].[dbo].[Products]";
+                    "  FROM [dbo].[Products]";
             resultSet = statement.executeQuery(selectSql);
 
             while (resultSet.next()) {
@@ -56,7 +56,7 @@ public class ProductServiceDb extends SQLDatabaseConnection implements IProductS
 
     @Override
     public void add(Product product) {
-        String insertSql = "INSERT INTO [Warehouse App].[dbo].[Products] (Name, Quantity, Price, Category, Details) VALUES "
+        String insertSql = "INSERT INTO [dbo].[Products] (Name, Quantity, Price, Category, Details) VALUES "
                 + "('" + product.Name + "', '" + product.Quantity + "', '" + product.Price + "', '"
                 + product.Category + "', '" + product.Details + "');";
 
@@ -70,7 +70,7 @@ public class ProductServiceDb extends SQLDatabaseConnection implements IProductS
 
     @Override
     public void update(Product product) {
-        String updateSql = "UPDATE [Warehouse App].[dbo].[Products]" +
+        String updateSql = "UPDATE [dbo].[Products]" +
                 "SET Name = '" + product.Name + "', Quantity = '" + product.Quantity +
                 "', Price = '" + product.Price + "', Category = '" + product.Category +
                 "', Details = '" + product.Details + "' WHERE id = " + product.Id;
@@ -85,7 +85,7 @@ public class ProductServiceDb extends SQLDatabaseConnection implements IProductS
 
     @Override
     public void delete(int id) {
-        String deleteSql = "DELETE [Warehouse App].[dbo].[Products] WHERE id = " + id;
+        String deleteSql = "DELETE [dbo].[Products] WHERE id = " + id;
 
         try (Connection connection = DriverManager.getConnection(super.connectionUrl);
              Statement statement = connection.createStatement();) {

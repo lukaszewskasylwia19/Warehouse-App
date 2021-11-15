@@ -25,16 +25,16 @@ public class Main {
         IOrderService orderService;
         IProductService productService;
 
-        if(args.length > 0 && args[0] == "Database"){
+//        if(args.length > 0 && args[0] == "Database"){
             var logger = getLogger();
             customerService = new CustomerServiceDb(logger);
             orderService = new OrderServiceDb(logger);
             productService = new ProductServiceDb(logger);
-        } else {
-            customerService = new CustomerServiceInMemory();
-            orderService = new OrderServiceInMemory();
-            productService = new ProductServiceInMemory();
-        }
+//        } else {
+//            customerService = new CustomerServiceInMemory();
+//            orderService = new OrderServiceInMemory();
+//            productService = new ProductServiceInMemory();
+//        }
 
         new AppFrame(customerService, orderService, productService);
     }

@@ -33,9 +33,9 @@ public class OrderServiceDb extends SQLDatabaseConnection implements IOrderServi
                     "      ,p.[Quantity] AS 'ProductQuantity'\n" +
                     "      ,p.[Price] AS 'ProductPrice'\n" +
                     "      ,[Date] AS 'OrderDate'\n" +
-                    "  FROM [Warehouse App].[dbo].[Orders] o\n" +
-                    "  INNER JOIN  [Warehouse App].[dbo].[Customers] c ON o.CustomerId = c.id \n" +
-                    "  INNER JOIN  [Warehouse App].[dbo].[Products] p ON o.ProductId = p.Id";
+                    "  FROM [dbo].[Orders] o\n" +
+                    "  INNER JOIN [dbo].[Customers] c ON o.CustomerId = c.id \n" +
+                    "  INNER JOIN [dbo].[Products] p ON o.ProductId = p.Id";
             resultSet = statement.executeQuery(selectSql);
 
             while (resultSet.next()) {

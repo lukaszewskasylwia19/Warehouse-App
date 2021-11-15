@@ -32,7 +32,7 @@ public class CustomerServiceDb extends SQLDatabaseConnection implements ICustome
                     "      ,[Address]\n" +
                     "      ,[Email]\n" +
                     "      ,[NIP]\n" +
-                    "  FROM [Warehouse App].[dbo].[Customers]";
+                    "  FROM [dbo].[Customers]";
             resultSet = statement.executeQuery(selectSql);
 
             while (resultSet.next()) {
@@ -54,7 +54,7 @@ public class CustomerServiceDb extends SQLDatabaseConnection implements ICustome
 
     @Override
     public void add(Customer customer) {
-        String insertSql = "INSERT INTO [Warehouse App].[dbo].[Customers] (Name, Address, Email, NIP) VALUES "
+        String insertSql = "INSERT INTO [dbo].[Customers] (Name, Address, Email, NIP) VALUES "
                 + "('" + customer.Name + "', '" + customer.Address + "', '" + customer.Email + "', '"
                 + customer.NIP + "');";
 
@@ -68,7 +68,7 @@ public class CustomerServiceDb extends SQLDatabaseConnection implements ICustome
 
     @Override
     public void update(Customer customer) {
-        String updateSql = "UPDATE [Warehouse App].[dbo].[Customers]" +
+        String updateSql = "UPDATE [dbo].[Customers]" +
                 "SET Name = '" + customer.Name + "', Address = '" + customer.Address +
                 "', Email = '" + customer.Email + "', NIP = '" + customer.NIP + "' WHERE id = " + customer.Id;
 
@@ -82,7 +82,7 @@ public class CustomerServiceDb extends SQLDatabaseConnection implements ICustome
 
     @Override
     public void delete(int id) {
-        String deleteSql = "DELETE [Warehouse App].[dbo].[Customers] WHERE id = " + id;
+        String deleteSql = "DELETE [dbo].[Customers] WHERE id = " + id;
 
         try (Connection connection = DriverManager.getConnection(super.connectionUrl);
              Statement statement = connection.createStatement()) {
