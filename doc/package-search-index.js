@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"pl.warehouse.common"},{"l":"pl.warehouse.interfaces"},{"l":"pl.warehouse.models"},{"l":"pl.warehouse.services"},{"l":"pl.warehouse.ui"},{"l":"pl.warehouse.ui.customers"},{"l":"pl.warehouse.ui.orders"},{"l":"pl.warehouse.ui.products"}];updateSearchResults();

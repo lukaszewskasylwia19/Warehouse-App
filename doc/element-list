@@ -1,0 +1,8 @@
+pl.warehouse.common
+pl.warehouse.interfaces
+pl.warehouse.models
+pl.warehouse.services
+pl.warehouse.ui
+pl.warehouse.ui.customers
+pl.warehouse.ui.orders
+pl.warehouse.ui.products
